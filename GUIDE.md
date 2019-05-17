@@ -26,7 +26,7 @@ and the [general **leihs** Documentation](https://github.com/leihs/leihs/wiki)_
      'sudo apt update && sudo apt install -fy curl build-essential libssl-dev default-jdk ruby libyaml-dev python2.7 python2.7-dev git libffi-dev'
    ```
 
-1) set up inventory on a computer running Linux or macOS (will be the "control machine").  
+1. set up inventory on a computer running Linux or macOS (will be the "control machine").  
    It needs the following software installed: `git`, `python`, `Java 8`, `Ruby 2.3`.
 
    ```sh
@@ -36,14 +36,14 @@ and the [general **leihs** Documentation](https://github.com/leihs/leihs/wiki)_
    sh -c 'git submodule update --init leihs && cd leihs && git submodule update --init --recursive'
    ```
 
-1) Prepare SSL/TLS certificate. To use (the recommended) LetsEncrypt + Certbot, follow the [official instructions](https://certbot.eff.org) to install, then use the following comand to interactively obtain a certificate for the first time. If that worked, automated renewals should be set up as well.
+1. Prepare SSL/TLS certificate. To use (the recommended) LetsEncrypt + Certbot, follow the [official instructions](https://certbot.eff.org) to install, then use the following comand to interactively obtain a certificate for the first time. If that worked, automated renewals should be set up as well.
 
    ```sh
    ssh "${LEIHS_HOST_USER}@${LEIHS_HOSTNAME}" -- \
      "sudo certbot certonly --apache --force-interactive -d '${LEIHS_HOSTNAME}'"
    ```
 
-1) inventory configuration
+1. inventory configuration
 
    ```sh
    # create hosts file
@@ -60,9 +60,9 @@ and the [general **leihs** Documentation](https://github.com/leihs/leihs/wiki)_
    - edit per-host leihs settings in file `settings/${LEIHS_HOSTNAME}.yml`
    - **commit**: `git add . && git commit -m "inventory config for ${LEIHS_HOSTNAME}"`
 
-1) install with ansible: `./scripts/deploy`
+1. install with ansible: `./scripts/deploy`
 
-1) Leihs is now installed on the given hostname.  
+1. Leihs is now installed on the given hostname.  
    Open it in your browser and use the form to create the first admin user.  
    Add Users and Groups and start using **leihs**! 🎉
 
