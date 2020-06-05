@@ -1,0 +1,15 @@
+external_base_url: leihs.test
+
+time_zone: Vienna
+local_currency_string: EUR
+
+mail_delivery_method: smtp
+smtp_address: 10.64.54.22
+smtp_port: 25
+smtp_domain: mail.leihs.test
+smtp_username: leihs
+smtp_password: Kecske333
+smtp_enable_starttls_auto: f
+smtp_openssl_verify_mode: 0
+
+ldap_config:
